@@ -33,6 +33,10 @@ jobs:
       - name: Install the package
         run: pip install -e .
 
+      - name: Set PYTHONPATH
+        run: |
+          echo "PYTHONPATH=$(pwd)/src" >> $GITHUB_ENV
+
       # Step 4: Run tests
       - name: Run tests
         run: pytest
